@@ -1,0 +1,51 @@
+
+mkdir git-atividade-mini-curso
+cd git-atividade-mini-curso
+code .
+visitante@ncc:~/git-atividade-mini-curso$ git config --global user.name "guigus12"
+visitante@ncc:~/git-atividade-mini-curso$ git config --global user.email "guitomas225@gmail.com"
+visitante@ncc:~/git-atividade-mini-curso$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/visitante/git-atividade-mini-curso/.git/
+visitante@ncc:~/git-atividade-mini-curso$ touch arquivo1.txt
+visitante@ncc:~/git-atividade-mini-curso$ touch arquivo2.txt
+visitante@ncc:~/git-atividade-mini-curso$ git add arquivo1.txt
+visitante@ncc:~/git-atividade-mini-curso$ git add arquivo2.txt
+visitante@ncc:~/git-atividade-mini-curso$ git commit -m "primeiro commit"
+
+Resultado git diff:
+visitante@ncc:~/git-atividade-mini-curso$ git diff
+diff --git a/arquivo1.txt b/arquivo1.txt
+index e69de29..42bd5f4 100644
+--- a/arquivo1.txt
++++ b/arquivo1.txt
+@@ -0,0 +1 @@
++teste1
+\ No newline at end of file
+diff --git a/arquivo2.txt b/arquivo2.txt
+index e69de29..3078ae4 100644
+--- a/arquivo2.txt
++++ b/arquivo2.txt
+@@ -0,0 +1 @@
++teste2
+\ No newline at end of file
+visitante@ncc:~/git-atividade-mini-curso$ git add -A
+visitante@ncc:~/git-atividade-mini-curso$ git commit -m "segundo commit"
+
+
+
+
+
+
+
+
+
