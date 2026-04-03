@@ -1,29 +1,15 @@
-
-mkdir git-atividade-mini-curso
-cd git-atividade-mini-curso
+mkdir atividade-git-minicurso
+cd atividade-git-minicurso
 code .
-visitante@ncc:~/git-atividade-mini-curso$ git config --global user.name "guigus12"
-visitante@ncc:~/git-atividade-mini-curso$ git config --global user.email "guitomas225@gmail.com"
-visitante@ncc:~/git-atividade-mini-curso$ git init
-hint: Using 'master' as the name for the initial branch. This default branch name
-hint: is subject to change. To configure the initial branch name to use in all
-hint: of your new repositories, which will suppress this warning, call:
-hint:
-hint: 	git config --global init.defaultBranch <name>
-hint:
-hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-hint: 'development'. The just-created branch can be renamed via this command:
-hint:
-hint: 	git branch -m <name>
-Initialized empty Git repository in /home/visitante/git-atividade-mini-curso/.git/
-visitante@ncc:~/git-atividade-mini-curso$ touch arquivo1.txt
-visitante@ncc:~/git-atividade-mini-curso$ touch arquivo2.txt
-visitante@ncc:~/git-atividade-mini-curso$ git add arquivo1.txt
-visitante@ncc:~/git-atividade-mini-curso$ git add arquivo2.txt
-visitante@ncc:~/git-atividade-mini-curso$ git commit -m "primeiro commit"
+git init
+git add arquivo2.txt
+git add arquivo1.txt
+git commit -m "primeiro commit"
+2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arquivo1.txt
+ create mode 100644 arquivo2.txt
 
-Resultado git diff:
-visitante@ncc:~/git-atividade-mini-curso$ git diff
+git diff
 diff --git a/arquivo1.txt b/arquivo1.txt
 index e69de29..42bd5f4 100644
 --- a/arquivo1.txt
@@ -38,10 +24,88 @@ index e69de29..3078ae4 100644
 @@ -0,0 +1 @@
 +teste2
 \ No newline at end of file
-visitante@ncc:~/git-atividade-mini-curso$ git add -A
-visitante@ncc:~/git-atividade-mini-curso$ git commit -m "segundo commit"
+
+git add -A
+git commit -m "segundo commit"
+[master 507dc5a] segundo commit
+ 2 files changed, 2 insertions(+)
+
+git log --oneline
+507dc5a (HEAD -> master) segundo commit
+3d19c38 primeiro commit
+git checkout 3d19c38
+git checkout master
 
 
+git checkout -b versao_alt1
+git add arquivo1.txt
+git commit -m "teste1_alt"
+[versao_alt1 eeb9f43] teste1_alt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+git add arquivo3_alt1.txt
+git commit -m "teste2_alt1"
+1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 arquivo3_alt1.txt
+
+git log --oneline 
+eed51a5 (HEAD -> versao_alt1) teste2_alt1
+eeb9f43 teste1_alt
+507dc5a (master) segundo commit
+3d19c38 primeiro commit
+
+git checkout master
+git log --oneline
+507dc5a (HEAD -> master) segundo commit
+3d19c38 primeiro commit
+
+git add arquivo2.txt
+git commit -m "terceiro commit"
+[master ee01f97] terceiro commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+git log --oneline
+ee01f97 (HEAD -> master) terceiro commit
+507dc5a segundo commit
+3d19c38 primeiro commit
+
+git log --oneline --all
+ee01f97 (HEAD -> master) terceiro commit
+eed51a5 (versao_alt1) teste2_alt1
+eeb9f43 teste1_alt
+507dc5a segundo commit
+3d19c38 primeiro commit
+
+git log --oneline --all --graph
+* ee01f97 (HEAD -> master) terceiro commit
+| * eed51a5 (versao_alt1) teste2_alt1
+| * eeb9f43 teste1_alt
+|/
+* 507dc5a segundo commit
+* 3d19c38 primeiro commit
+
+//////tinha alterado a mesma coisa na master e na versao_alt1, ai arrumei para não dar comflito
+git checkout versao_alt1
+git add -A
+git commit -m "arrumando merge"
+/////////////////////////////
+
+git checkout master
+git merge versao_alt1
+git log --oneline
+Merge made by the 'ort' strategy.
+ arquivo1.txt      | 3 ++-
+ arquivo3_alt1.txt | 0
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 arquivo3_alt1.txt
+PS C:\Users\Pichau\atividade-git-mini-curso> git log --oneline
+069b05a (HEAD -> master) Merge branch 'versao_alt1' Merge da branch versao_alt1 na branch master
+c283d80 (versao_alt1) arrumando merge
+ee01f97 terceiro commit
+eed51a5 teste2_alt1
+eeb9f43 teste1_alt
+507dc5a segundo commit
+3d19c38 primeiro commit
 
 
 
