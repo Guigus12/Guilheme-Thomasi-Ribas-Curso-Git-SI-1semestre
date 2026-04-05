@@ -1,0 +1,28 @@
+- GIT - 
+
+-> VCS - software de controle de versão
+-> distribuido - tem dentro do pc um controle de 
+
+-> Commit Perfeito
+    - deve conter funcionalidades semelhantes e complementares
+    - possibilitando melhor organização das verções
+
+-> A menssgem perfeita 
+    - título = resumo das alterações
+    - body = mais detalher 
+    - usando apenas o git commit é possível adicionar mais detalher no commit
+
+-> As Branches
+   *Em geral a main ou master é a versão que oficil e que funciona (longa)
+   -longas: serrvem para a produção e teste antes de adicionar na main 
+   -pequenas: algumas funcionalidades menores e são excluidas depois
+ 
+
+ -> Pull Request 
+    - é um tipo de merge na main, mas que é validado por outros no github 
+    antes de ser executado
+    - usando para repositórios abertos, mas que não é possível fazer push sem permissão,
+    é possível clonar modificar e submeter suas alterações com pull request 
+    - permite melhoria de códigos abertos 
+    - usando a função fork do girhub é possível clonar o repositório e submeter suas modificações ao original
+    
